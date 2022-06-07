@@ -1,0 +1,132 @@
+const json = {
+    "clients":[
+       {
+        "firstName":"John",
+        "lastName":"Smith",
+        "age":25,
+        "sex":"Male",
+        "address":{
+            "streetAddress":"21 2nd  Street",
+            "city":"New York",
+            "state":"NY",
+            "postalCode":10021
+        },
+        "spouse":{
+            "firstName":"Carla",
+            "lastName":"Smith",
+            "age":25,
+            "sex":"Female"
+        },
+          "phoneNumbers":[
+             {
+                "type":"home",
+                "number":"212  555-1234"
+             },
+             {
+                "type":"cell phone",
+                "number":"646  555-4567"
+             }
+        ]
+       },
+       {
+          "firstName":"Frodo",
+          "lastName":"Bolseiro",
+          "age":15,
+          "sex":"Male",
+          "address":{
+             "streetAddress":"21 2nd  Street",
+             "city":"Sena Madureira",
+             "state":"AC",
+             "postalCode":10021
+          },
+          "spouse":{
+             "firstName":"Joana",
+             "lastName":"Alves",
+             "age":25,
+             "sex":"Female"
+          },
+          "phoneNumbers":[
+             {
+                "type":"home",
+                "number":"212  555-1234"
+             },
+             {
+                "type":"cell phone",
+                "number":"646  555-4567"
+             }
+          ]
+       },
+       {
+          "firstName":"Roberto",
+          "lastName":"Miranda",
+          "age":52,
+          "sex":"Male",
+          "address":{
+             "streetAddress":"21 2nd  Street",
+             "city":"Rio de Janeiro",
+             "state":"RJ",
+             "postalCode":10021
+          },
+          "phoneNumbers":[
+             {
+                "type":"cell phone",
+                "number":"646  555-4567"
+             }
+          ]
+       },
+       {
+          "firstName":"Carla",
+          "lastName":"Miranda",
+          "age":21,
+          "sex":"Female",
+          "address":{
+             "streetAddress":"21 2nd  Street",
+             "city":"Rio de Janeiro",
+             "state":"RJ",
+             "postalCode":10021
+          }
+       },
+       {
+          "firstName":"Gandalf",
+          "lastName":"O Cinzento",
+          "age":98,
+          "sex":"Male",
+          "address":{
+             "streetAddress":"21 2nd  Street",
+             "city":"Xapuri",
+             "state":"AC",
+             "postalCode":10021
+          },
+          "spouse":{
+             "firstName":"Trinity",
+             "lastName":"Gonçalves",
+             "age":51,
+             "sex":"Male"
+          },
+          "phoneNumbers":[
+             {
+                "type":"home",
+                "number":"212  555-1234"
+             }
+          ]
+       }
+    ]
+}
+
+
+const quantAlunos = json.clients.map((client) => client.sex === 'Male').filter((aluno) => aluno === true).length
+console.log(`${quantAlunos} Clientes com Sexo Masculino`);
+
+const NomeAlunos = json.clients.filter((client) => client.address.state === 'AC').map((client) => `${client.firstName} ${client.lastName}`)
+NomeAlunos.forEach((obj) => console.log(obj));
+
+const ClienteCasados = json.clients.filter((client) => client.spouse).map((client) => `Nome: ${client.firstName} ${client.lastName}, Numero de Telefone: ${client.phoneNumbers.map((phone) => phone.number)}`);
+ClienteCasados.forEach((obj) => console.log(obj))
+
+const ClienteSemTelefone = json.clients.filter((client) => !client.phoneNumbers).map((client) => `${client.firstName} ${client.lastName}`);
+ClienteSemTelefone.forEach((obj) => console.log(obj));
+
+const ClienteMaisVelho = json.clients.map((client) => client.age).
+console.log(ClienteMaisVelho);
+
+
